@@ -1,23 +1,23 @@
-# 🎧 Global Music Trends — Insights from Spotify Data
+# 🎧 Análise de Features Musicais e Popularidade no Spotify
 
 ### 📊 Exploratory Data Analysis | Power BI | Tableau | Python
 
 ---
 
 ## 🧩 Project Overview
-This project explores **global music trends over the last two decades** using Spotify’s public dataset.  
-The goal was to identify how **popularity, musical features, and listening behaviors** evolved across genres and years — providing valuable insights for artists, producers, and digital marketers.
+Este projeto explora o dataset público do Spotify para entender a **relação entre atributos musicais (features) e a popularidade das faixas**.
+O objetivo foi identificar como características como `danceability`, `energy` e `valence` **diferem entre os gêneros** e quais atributos têm maior correlação com a popularidade de uma música — fornecendo insights para produtores e selos musicais.
 
-> 💡 *The analysis reveals how shorter, high-energy, and danceable songs dominate the streaming era.*
+> 💡 *A análise revela como perfis de áudio específicos (ex.: alta energia e dançabilidade) estão fortemente correlacionados com faixas de alta popularidade em gêneros-chave.*
 
 ---
 
 ## 🎯 Business Task
-A music media consulting startup requested a data-driven overview of:
-- Which genres remain most popular across time  
-- How attributes such as `energy`, `danceability`, and `valence` changed by decade  
-- The relationship between song features and overall popularity  
-- How regional preferences influence music trends  
+Uma consultoria musical solicitou uma visão geral de:
+- A relação (correlação) entre as features musicais (`energy`, `danceability`, etc.) e a `popularity` geral.
+- Quais gêneros musicais têm os maiores índices médios desses atributos.
+- O "perfil de áudio" médio de um gênero (ex.: "Pop" vs. "Classical").
+- Quais features são os melhores indicadores de popularidade de uma faixa.
 
 ---
 
@@ -38,46 +38,45 @@ A music media consulting startup requested a data-driven overview of:
 **Features:**
 - `track_name`, `artist_name`, `genre`
 - `popularity`, `danceability`, `energy`, `valence`, `acousticness`
-- `tempo`, `year`, `country`
+- `tempo`, `duration_ms`, `instrumentalness`, `liveness`, `loudness`
+- `speechiness`, `key`, `mode`, `time_signature`
 
 ---
 
 ## ⚙️ Process
 
-1. **Data Cleaning:** Removed duplicates, handled null values, standardized genre names  
-2. **Transformation:** Grouped data by decade and country for comparative analysis  
-3. **Exploration:** Used Python for correlation analysis between musical features  
-4. **Visualization:** Built dynamic dashboards in Power BI and Tableau  
-
+1. **Data Cleaning:** remove duplicatas, handle para null values (especialmente em `genre`), padronização de gêneros musicais.
+2. **Transformation:** Convertido `duration_ms` para `duration_min` para melhor interpretação.
+3. **Exploration:** Python e Tableau para observar a correlação entre todas as features musicais e popularidade.
+4. **Visualization:** Construção de dashboards dinâmicas em Tableau para explorar os diferentes perfis de gênero.
 ---
 
 ## 📈 Key Findings
 
 | Insight | Observation |
 |----------|--------------|
-| 🎵 **Pop music** | Popularity increased by ~15% since 2000 |
-| ⚡ **Energy & Danceability** | Strong positive correlation (r ≈ 0.68) |
-| ⏱️ **Song Duration** | Average length dropped from 4m20s to 3m05s |
-| 😊 **Valence** | Positive-sounding tracks dominate top charts |
-| 🌎 **Regional Patterns** | Latin America and Europe lead in danceable trends |
+| 🎵 **Drivers de Popularidade** | `Danceability` e `Energy` mostraram uma correlação positiva consistente com `Popularity`. |
+| ⚡ **Correlação de Features** | `Energy` e `Loudness` (volume) têm uma correlação positiva muito forte (r > 0.7). |
+| 🎻 **Features Opostas** | `Acousticness` (acústica) tem uma forte correlação negativa com `Energy` e `Loudness`. |
+| 😊 **Perfis de Gênero** | Gêneros como "Pop", "Latin" e "Hip-Hop" apresentam, em média, maior `Danceability` e `Valence` (positividade). |
+| 🎹 **Instrumental** | `Instrumentalness` (ser instrumental) mostrou uma correlação negativa com `Popularity` na maioria dos gêneros. |
 
 ---
 
 ## 🗺️ Dashboard Preview
-**Power BI Dashboard:** `Music Trends Overview (2000–2023)`  
+**Tableau Dashboard:** `Análise de Features Musicais e Popularidade`  
 Includes:
-- Popularity by genre and decade  
-- Track length evolution  
-- Correlation heatmap of musical features  
-- Regional popularity map  
+- **Gráfico de Dispersão (Scatter Plot):** Popularidade vs. Danceability (colorido por Gênero)
+- **Heatmap:** Média de Atributos (Energy, Valence, etc.) por Gênero
+- **Gráfico de Caixa (Box Plot):** Distribuição de `Energy` por Gênero
+- **Filtros Interativos:** Permite ao usuário filtrar por Gênero para analisar perfis específicos.
 
-IN PROGRESS 
+IN PROGRESS  
 
 ---
 
 ## 🧑‍💻 Author
 
-**Ana Karolina Costa da Silva**  
-📍 Software Engineer & Data Science Researcher  
+**Ana Karolina Costa da Silva** 📍 Software Engineer & Data Science Researcher  
 🎓 M.Sc. Computer Science — PUC-Rio  
-💼 [LinkedIn](https://www.linkedin.com/in/karolyneehcs/) | [GitHub](https://github.com/karolyneehcs)  
+💼 [LinkedIn](https://www.linkedin.com/in/karolyneehcs/) | [GitHub](https://github.com/karolyneehcs)
